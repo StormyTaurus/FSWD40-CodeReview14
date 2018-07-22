@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+        <a class="btn btn-default" href="/">Back to bigevents</a>
+
+        <hr>
+
+        <h2 class="page-header">{{bigevents.eventName}}</h2>
+
+        <ul class="list-group">
+
+                <li class="list-group-item">Category: {{bigevents.eventType}}</li>
+
+                <li class="list-group-item">Priority: <img class="img-responsive" style="width: 100%" src="{{bigevents.eventImg}}"></li>
+
+                <li class="list-group-item">Due: <strong> {{bigevents.eventDate|date('F j, Y, g:i a')}} </strong> </li>
+
+        </ul>
+
+        <p>
+
+                {{bigevents.eventDesc}}
+
+        </p>
+
+{% endblock %}
