@@ -10,18 +10,39 @@
 
         <ul class="list-group">
 
-                <li class="list-group-item">Category: {{bigevents.eventType}}</li>
+                <li class="list-group-item"><img class="img-responsive" style="width: 100%" src="{{bigevents.eventImg}}"></li>
 
-                <li class="list-group-item">Priority: <img class="img-responsive" style="width: 100%" src="{{bigevents.eventImg}}"></li>
+                <li class="list-group-item">Start Date: <strong> {{bigevents.eventDate|date('F j, Y, g:i a')}} </strong> </li>
 
-                <li class="list-group-item">Due: <strong> {{bigevents.eventDate|date('F j, Y, g:i a')}} </strong> </li>
+                <li class="list-group-item">End Date: <strong> {{bigevents.eventDateEnd|date('F j, Y, g:i a')}} </strong> </li>
+
+                <li class="list-group-item">Type: {{bigevents.eventType}}</li>
+
+                <!-- <li class="list-group-item">Description: {{bigevents.eventDesc}}</li>-->
+
+                <li class="list-group-item">Capacity: {{bigevents.eventCapacity}}</li>
+
+                <li class="list-group-item">eMail: {{bigevents.eventMail}}</li>
+
+                <li class="list-group-item">Phone: {{bigevents.eventPhone}}</li>
+
+                <li class="list-group-item">Url: {{bigevents.eventUrl}}</li>
+
+                <li class="list-group-item">Street: {{bigevents.eventStreet}}  {{bigevents.eventstreetN}}</li>
+
+                <li class="list-group-item">Zip: {{bigevents.eventZip}}</li>
+
+                <li class="list-group-item">City: {{bigevents.eventCity}}</li>
+
+                <li class="list-group-item">
+                        
+                        <h3>Description</h3>
+
+                        {{bigevents.eventDesc}}
+
+                </li>
 
         </ul>
 
-        <p>
-
-                {{bigevents.eventDesc}}
-
-        </p>
-
+        
 {% endblock %}

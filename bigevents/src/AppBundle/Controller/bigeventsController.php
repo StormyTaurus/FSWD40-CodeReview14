@@ -191,12 +191,30 @@ class bigeventsController extends Controller
                 $bigevents->seteventName($bigevents->geteventName());
     
                 $bigevents->seteventDate($bigevents->geteventDate());
+
+                $bigevents->seteventDateEnd($bigevents->geteventDateEnd());
     
                 $bigevents->seteventDesc($bigevents->geteventDesc());
     
                 $bigevents->seteventImg($bigevents->geteventImg());
     
                 $bigevents->seteventCapacity($bigevents->geteventCapacity());
+
+                $bigevents->seteventMail($bigevents->geteventMail());
+
+                $bigevents->seteventPhone($bigevents->geteventPhone());
+
+                $bigevents->seteventUrl($bigevents->geteventUrl());
+
+                $bigevents->seteventType($bigevents->geteventType());
+
+                $bigevents->seteventStreet($bigevents->geteventStreet());
+
+                $bigevents->seteventStreetN($bigevents->geteventStreetN());
+
+                $bigevents->seteventZip($bigevents->geteventZip());
+
+                $bigevents->seteventCity($bigevents->geteventCity());
     
                 // $bigevents->setCreateDate($now);
     
@@ -205,12 +223,31 @@ class bigeventsController extends Controller
             ->add('eventName', TextType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
     
             ->add('eventDate', DateTimeType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
+
+            ->add('eventDateEnd', DateTimeType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-bottom:15px')))
     
             ->add('eventDesc', TextareaType::class, array('attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
     
-            ->add('eventImg', TextareaType::class, array('attr'=>array('Low'=>'Low', 'Normal'=>'Normal', 'High'=>'High'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
+            ->add('eventImg', TextType::class, array('attr'=>array('Low'=>'Low', 'Normal'=>'Normal', 'High'=>'High'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
     
             ->add('eventCapacity', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventMail', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventPhone', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventUrl', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventType', ChoiceType::class, array('choices'=>array('Music'=>'Music', 'Sport'=>'Sport', 'Movie'=>'Movie', 'Theater'=>'Theater'),'attr' => array('class'=> 'form-control', 'style'=>'margin-botton:15px')))
+
+            ->add('eventStreet', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventStreetN', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventZip', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
+            ->add('eventCity', TextType::class, array('attr' => array('style'=>'margin-bottom:15px')))
+
     
         ->add('save', SubmitType::class, array('label'=> 'Update bigevents', 'attr' => array('class'=> 'btn-primary', 'style'=>'margin-botton:15px')))
     
@@ -225,30 +262,67 @@ class bigeventsController extends Controller
                 $eventName = $form['eventName']->getData();
     
                 $eventDate = $form['eventDate']->getData();
+
+                $eventDateEnd = $form['eventDateEnd']->getData();
     
                 $eventDesc = $form['eventDesc']->getData();
     
                 $eventImg = $form['eventImg']->getData();
     
                 $eventCapacity = $form['eventCapacity']->getData();
+
+                $eventMail = $form['eventMail']->getData();
+
+                $eventPhone = $form['eventPhone']->getData();
+
+                $eventUrl = $form['eventUrl']->getData();
+
+                $eventType = $form['eventType']->getData();
+
+                $eventStreet = $form['eventStreet']->getData();
+
+                $eventStreetN = $form['eventStreetN']->getData();
+
+                $eventZip = $form['eventZip']->getData();
+
+                $eventCity = $form['eventCity']->getData();
     
                 $now = new\DateTime('now');
     
                 $em = $this->getDoctrine()->getManager();
     
                 $bigevents = $em->getRepository('AppBundle:bigevents')->find($id);
-    
+
                 $bigevents->seteventName($eventName);
     
                 $bigevents->seteventDate($eventDate);
+
+                $bigevents->seteventDateEnd($eventDateEnd);
     
                 $bigevents->seteventDesc($eventDesc);
     
                 $bigevents->seteventImg($eventImg);
     
                 $bigevents->seteventCapacity($eventCapacity);
+
+                $bigevents->seteventMail($eventMail);
+
+                $bigevents->seteventPhone($eventPhone);
+
+                $bigevents->seteventUrl($eventUrl);
+
+                $bigevents->seteventType($eventType);
+
+                $bigevents->seteventStreet($eventStreet);
+
+                $bigevents->seteventStreetN($eventStreetN);
+
+                $bigevents->seteventZip($eventZip);
+
+                $bigevents->seteventCity($eventCity);
+
     
-                $bigevents->seteventDate($now);
+                // $bigevents->seteventDate($now);
     
              
     
